@@ -1,19 +1,41 @@
 import unittest
-from client import client
+import sys
+sys.path.insert(0, "/Users/voiceloco/work/pythonspace/lunker_cli/src/client")
+
+import client
 
 class TestApp(unittest.TestCase):
     '''
     @brief test case using uniitest.TestCase
     '''
     def setUp(self):
-        ''' @brief this method is called before every test methods '''
+        psy=client.Client("park", "psy", "theKids")
+        lunker=client.Client("lee", "lunker", "voiceloco")
         pass
+
     def tearDown(self):
         ''' @brief this method is called after every test methods '''
         pass
-    def test001_init(self):
-        clientA=client()
-        #self.assertTrue(my.a == 'a' and my.b == 'b')
+
+    def test_create_client(self):
+        voice=client.Client("lee", "lunker", "voiceloco")
+        loco=client.Client("kim", "lunker2", "voiceloco")
+
+        self.assertNotEqual(voice, loco)
+
+        ''' test factory method '''
+        voice=client.Client.create_client ("lee", "lunker", "voiceloco")
+        loco=client.Client.create_client ("kim", "lunker2", "voiceloco")
+        voice.print_client()
+        self.assertNotEqual(voice, loco)
+        pass
+
+    def test_create_room(self):
+        pass
+        
+    def test_print_room_list(self):
+        psy.print_room_list():
+        pass
 
 if __name__ == '__main__':
     '''
