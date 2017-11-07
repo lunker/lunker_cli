@@ -4,6 +4,7 @@
 **/*.py.swp
 
 
+
 .Python
 
 # Virtualenv
@@ -13,6 +14,6 @@
 [Ll]ib64
 [Ll]ocal
 [Ss]cripts
-
+.env
 
 
