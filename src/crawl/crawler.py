@@ -33,10 +33,12 @@ class NaverCrawler:
         if self.is_logined is False:
             raise NotLoginError()
 
+        article_list = list()
+
         for menu_id in menu_id_list:
             url ='http://cafe.naver.com/ArticleList.nhn?search.clubid=11367414&search.menuid={menu_id}&search.boardtype=L'.format(menu_id=menu_id)
             data = self.session.create_http_get(url)
-            article_list = list()
+
             article_list.append(NaverCafeArticleMetaData(title="==========={category}===========".format(category=menu_id)))
             if data.status_code == 200:
                 raw_data = BeautifulSoup(data.text, 'html.parser')

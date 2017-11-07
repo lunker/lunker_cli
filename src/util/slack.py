@@ -6,8 +6,7 @@ from crawl.article import NaverCafeArticleMetaData
 class SlackHelper:
 
     def send_message(self, data):
-        # token = 'xoxb-268214032229-jUml5WQlqPOYCSokgXQQpOQ6'
-        token = 'xoxb-268017423619-WNkS47iUEbMvaSMGUgEzvQNF'
+
         slack = Slacker(token)
 
         response = slack.chat.post_message('#futsal', text=None, attachments=data, as_user=True)
