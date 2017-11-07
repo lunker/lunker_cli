@@ -1,7 +1,7 @@
 import unittest
 import sys
-sys.path.insert(0, "/Users/voiceloco/work/pythonspace/lunker_cli/src/client")
-sys.path.insert(0, "/Users/voiceloco/work/pythonspace/lunker_cli/src/server")
+sys.path.insert(0, "/Users/voiceloco/work/pythonspace/lunker_cli/src/chat/client")
+sys.path.insert(0, "/Users/voiceloco/work/pythonspace/lunker_cli/src/chat/server")
 
 import client
 import server
@@ -41,7 +41,7 @@ class TestApp(unittest.TestCase):
         pass
         
     def test_print_room_list(self):
-        psy.print_room_list():
+        self.psy.print_room_list()
         pass
 
 if __name__ == '__main__':

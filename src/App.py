@@ -1,35 +1,27 @@
 import cli.app
+from crawl.crawler import NaverCrawler
+from futsal.futsal import FutsalFinder
 
 @cli.app.CommandLineApp
-def ls(app):
-    print ("run -l")
-    print (app)
-    print (app.name)
-    pass
+def LunkerCli(app):
+    """
+    print("run -l")
+    print(app)
+    print(app.name)
+    print(app.params)
+    """
 
-ls.add_param("-l", "--long", help="list in long format", default=False, action="store_true")
-ls.add_param("-k", "--kong", help="list in long format", default=False, action="store_true")
+    if app.params.match is True:
+        app.futsal_finder = FutsalFinder()
+        app.futsal_finder.search_latest_matching()
 
-'''
-class LunkerCli(cli.app.CommandLineApp):
-    def main(self):
-        print("in main")
 
-LunkerCli.add_param("-l", "--long", help="list in long format", default=False, action="store_true")
-'''
-
-class LunkerCli:
-    @staticmethod
-    def run():
-        print ("Enter commands: ")
-        while True==True :
-            data=input()
-            print (data)
-            break
-    
+LunkerCli.add_param("-m", "--match", help="find futsal matching articles", default=False, action="store_true")
 
 if __name__ == "__main__":
-    #ls.run()
-    LunkerCli.run()
-
+    try:
+        LunkerCli.run()
+    except Exception as ex:
+        print("올바른 명령어를 입력해라 ")
+        print(ex)
 
