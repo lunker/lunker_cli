@@ -3,6 +3,9 @@
 **/*.swp
 **/*.py.swp
 
+
+.Python
+
 # Virtualenv
 [Bb]in
 [Ii]nclude
