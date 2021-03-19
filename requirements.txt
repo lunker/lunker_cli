@@ -17,7 +17,7 @@ ghost==0.6.1
 Ghost.py==0.2.3
 idna==2.6
 imagesize==0.7.1
-Jinja2==2.9.6
+Jinja2==2.11.3
 jinja2-time==0.2.0
 MarkupSafe==1.0
 pager==3.3
