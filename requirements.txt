@@ -37,7 +37,7 @@ snowballstemmer==1.2.1
 Sphinx==1.6.5
 sphinxcontrib-websupport==1.0.1
 tinydb==3.6.0
-urllib3==1.22
+urllib3==1.26.5
 websocket-client==0.44.0
 whichcraft==0.4.1
 xlrd==1.1.0
